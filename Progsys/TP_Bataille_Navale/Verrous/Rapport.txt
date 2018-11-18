@@ -1,0 +1,21 @@
+				Gestion des verrous:
+
+
+	Vision
+
+Vision ne fait que regarder si l'entête du fichier mer est vide, les verrous se font dans navire.c
+
+	Navire
+	
+Navire comporte 5 fonctions de verrous différentes:
+
+	-LockAll qui verrouille tout le fichier, pour se faire j'ai utiliser un verrou bloquant de l_len 0. La même fonction permet de déverrouiller la mer avec le paramètre booleen verrouiller. Elle est utilisée lors de la pose d'un bateau sur le fichier Mer et retiré dès l'initialisation terminée.
+	
+	-ShieldLock Représente le bouclier du bateau. Il s'agit d'un verrou bloquant de Longueur 1 et démarrant sur chaque position d'un case du bateau. Il s'agit de la même fonction que pour le dévérouillage du bouclier. Elle est utilisée pour retirer le verrou pour chaque déplacement et le remettre juste après si le bateau a toujours assez d'energie.
+	
+	-HeaderLock verrouille l'entête du fichier.Il s'agit d'un verrou bloquant de la taille de l'entête démarrant au début. La même fonction permet le déverouillage de l'entête. Elle est utilisé lors de chaque déplacement pour empecher le fichier vision d'afficher un bateau en déplacement et est retiré juste après.
+	
+	-NeighborLock verrouille les cases voisines du bateau. Il s'agit d'un verrou non bloquant d'une seule position posée sur chaque case de listevoisin, initialisée avec mer_voisins_rechercher.La même fonction déverouille les cases voisines. Elle est utilisée avant chaque déplacement pour vérifier la disponibilité des cases et est retirée après.
+	
+	
+	-TargetLock verrouille une case précise au moyen d'un verrou non bloquant(corrigé par la suite en bloquant) sur une case. Ce verrou est utilisé dans la partie consacrée au tir pour tester la présence de bouclier.

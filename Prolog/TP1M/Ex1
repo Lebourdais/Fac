@@ -1,0 +1,9 @@
+Etape 3:
+menu_simple(crudites,P,D).
+menu_simple(crudites,P,mousse_chocolat).
+poisson(P),menu_simple(E,P,D).
+poisson(P),menu_simple(melon,P,D).
+menu_simple(E,P,D),entree(crudites). Inutile
+menu_simple(E,P,D),!. Premier plat
+menu_simple(E,P,D),poisson(P),!. Premier avec du poisson
+menu_simple(E,P,D),!,poisson(P). Erreur

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROJET NOM="TestSwing" TYPE="Java">
+  <FICHIER>Fenetre.java</FICHIER>
+  <FICHIER>Main.java</FICHIER>
+  <FICHIER>Panneau.java</FICHIER>
+  <FICHIER>Bouton.java</FICHIER>
+</PROJET>
+

@@ -1,0 +1,10 @@
+Transfert par tube nommé:
+J'ai utilisé 2 pipes différents pour envoyer le message et le temps de départ.
+Le temps de transfert mesuré est de 0 ms, la précision semble trop petite pour voir une différence de temps.
+
+Transfert par boite aux lettre:
+La boite aux lettres est créée dans le récépteur, il faut le lancer en premier. Il doit y avoir une erreur dans la mesure des temps car le temps de transfert est encore égal à 0.
+
+Transfert par Fichier:
+Ce transfert ne fonctionne pas en raison d'une erreur inconnue (Panne d'alimentation).
+
