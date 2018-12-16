@@ -1,25 +1,5 @@
-import List
-import Intervalle
+import Fonction4
 
-prefixes (h:t) = [] : (map (h:) (prefixes t))
-prefixes [] = [[]]
-
-inferieur (h:t) (y:ys)
-  |t==[] && ys==[] && h==y = False
-  |h < y = True
-  |h > y = False
-  |otherwise = inferieur t ys;
-
-conjugue l n
-    |n==1 = l
-    |otherwise = conjugue ((drop 1 l)++[l!!0]) (n-1)
-
-lyndon l = let taille = longueur l in lyndontemp l taille
-
-lyndontemp l t
-  |t == 0 = True
-  |inferieur (conjugue l t) l = False
-  |otherwise =lyndontemp l (t-1)
 
 main = do
   print $ "Test pour liste [1,3,5]"
@@ -40,7 +20,11 @@ main = do
   print $ "Intervalle croissant entre 1 et 20 = "++ show(intervalle_asc 1 20)
   print $ "Intervalle decroissant entre 20 et 1 = "++ show(intervalle_desc 20 1)
   print $ "'biere' inferieur a 'bonbon' = "++ show(inferieur ['b','i','e','r','e'] ['b','o','n','b','o','n'])
+  print $ "Prefixes [a,b,c] = "++show(prefixes "abc")
   print $ "'bonbon' inferieur a 'biere' = "++ show(inferieur ['b','o','n','b','o','n'] ['b','i','e','r','e'])
   print $ "'biere' inferieur a 'biere' = "++ show(inferieur ['b','i','e','r','e'] ['b','i','e','r','e'])
   print $ "conjugue 'abcde' 4 = "++ show(conjugue "abcde" 4)
   print $ "Lyndon de 'aaab' = " ++ show(lyndon "aabb")
+  print $ "insere Liste [01,10] [001,01] = " ++ show(insere_liste ["01","10","0001"] ["001","01"])
+  print $ "fusion liste ['00','011'] ['001','01'] = " ++ show (fusion_liste [['0','0'],['0','1','1']] [['0','0','1'],['0','1']])
+  print $ "genere liste = " ++ show(genere 5)
